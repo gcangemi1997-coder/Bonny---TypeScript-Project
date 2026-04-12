@@ -1,15 +1,32 @@
 
-# 🚀 Startup Growth Ecosystem - TypeScript Project
+# Bonny 🚀
 
-Welcome to the **Startup Growth Ecosystem** project! This is a simulation platform developed in **TypeScript** to manage interactions between Startups, Citizens, and Government Incentives.
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![OOP](https://img.shields.io/badge/OOP-Design%20Pattern-00599C?style=for-the-badge)
+![ES%20Modules](https://img.shields.io/badge/ES%20Modules-Modern%20JS-F7DF1E?style=for-the-badge)
 
-[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
-[![Visual Studio Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)](https://code.visualstudio.com/)
+**TypeScript simulation of public incentives management for startups with citizen engagement tracking.**  
+Clean OOP architecture using interfaces, classes, and ES modules for scalable, type-safe code.
 
 ---
 
-## 🛠️ Project Features
+## 🖥️ Live Demo
+
+**[Try Bonny Live on CodePen](https://codepen.io/gcangemi1997-coder/pen/ZYpmLwO)**
+
+---
+
+## 🎯 How It Works
+
+1. **Startups** receive public incentives through the `riceviIncentivo()` method
+2. **Validation logic** prevents duplicate incentive IDs using `.some()` array check
+3. **Citizens** participate in startup activities via `partecipaAttivita()`
+4. **Console logging** provides clear feedback on all ecosystem interactions
+
+---
+
+## ✨ Features
 
 The system is built on three main entities that interact within a dynamic ecosystem:
 
@@ -17,60 +34,97 @@ The system is built on three main entities that interact within a dynamic ecosys
 * **💰 Incentive System**: Define public subsidies with specific criteria and manage their assignment logic.
 * **👥 Citizen Interaction**: Manage how citizens participate in activities promoted by startups.
 * **🛡️ Uniqueness Validation**: Includes a robust validation logic (`checkIncentivo`) to prevent a startup from receiving the same incentive (identified by ID) more than once.
+- ✅ Modular ES modules architecture
 
 ---
 
-## 📂 Project Structure
+## 🛠️ Tech Stack
+**TypeScript** - **Node.js** - **OOP** - **ES Modules**
 
-The file hierarchy follows professional standards to separate source code from execution logic:
+---
 
-```text
+## 📁 Project Structure
+
+```
 PROGETTO TYPESCRIPT/
-├── dist/                # Compiled JavaScript files (ignored by Git)
-├── src/                 # Source Code (Logic and Contracts)
-│   ├── interfaces.ts    # Interface definitions (IStartup, IIncentivo, ICittadino)
-│   └── classes.ts       # Class implementations and validation logic
-├── test/                # Execution and Simulations
-│   ├── main.ts          # Main ecosystem simulation script
-│   └── main.test.ts     # Specific test script for ID validation
-├── .gitignore           # Excludes node_modules and dist folder
-├── package.json         # NPM configuration and dependencies
-└── tsconfig.json        # TypeScript compiler settings
-🧪 Testing and Terminal Commands
-The project includes a manual test suite to verify the robustness of the validation logic.
+├── dist/                # Compiled JavaScript files (Git ignored)
+├── src/                 # Source TypeScript files
+│   ├── interfaces.ts    # Contract definitions (IStartup, IIncentivo, ICittadino)
+│   └── classes.ts       # Logic implementation & validation rules
+├── test/                # Simulation & Testing suite
+│   ├── main.ts          # Main ecosystem simulation
+│   └── main.test.ts     # Validation logic unit test
+├── .gitignore           # Files to be excluded from version control
+├── package.json         # Project metadata and scripts
+└── tsconfig.json        # TypeScript compiler configuration
+```
 
-Installation
-Ensure you have the dependencies installed:
+---
 
-Bash
+
+## 🚀 Quick Start
+
+```bash
+# Install dependencies
 npm install
-Compilation
-Compile TypeScript files into JavaScript using:
 
-Bash
+# Compile TypeScript
 npx tsc
-Running Tests
-To start the simulation and verify the duplicate blocking system:
 
-Bash
-# Runs the main simulation
+# Run main simulation
 node dist/test/main.js
 
-# Runs the specific ID validation test
+# Run validation test
 node dist/test/main.test.js
-🌐 Live Demo on CodePen
-You can view the project running directly in your browser:
+```
+---
 
-🔗 View Demo on CodePen
+## 🧠 Core Entities
 
-(Note: Please open the CodePen Console at the bottom left to see the output logs and the validation table)
+### 🏢 **Startup**
+```typescript
+export class Startup implements IStartup {
+  listaIncentivi: IIncentivo[] = [];
+  riceviIncentivo(incentivo: IIncentivo): void { ... }
+}
+```
 
-💻 Technologies Used
-TypeScript: For strong typing and clean Object-Oriented structure.
+### 💰 **Incentivo** 
+Assigns public funding to eligible startups
 
-Node.js: As the server-side runtime environment.
+### 🧑‍🤝‍🧑 **Cittadino**
+Tracks citizen participation in ecosystem activities
 
-Markdown: For project documentation.
+## 🔧 Key Implementation
 
-👤 Author
-Giorgio - Web Developer & TypeScript Enthusiast
+**Duplicate Prevention Logic:**
+```typescript
+const checkIncentivo = this.listaIncentivi.some(
+  (item) => item.id === incentivo.id
+);
+if (checkIncentivo) {
+  console.warn(`Duplicate incentive blocked!`);
+} else {
+  this.listaIncentivi.push(incentivo);
+}
+```
+---
+
+## 📚 What I Learned
+
+- **Interface-driven development** for type-safe contracts
+- **OOP principles** (encapsulation, single responsibility)
+- **ES modules** for modern TypeScript organization
+- **Practical validation** for data integrity
+
+---
+
+## 👨‍💻 Author
+
+**Giorgio Cangemi**  
+Full Stack Developer | Start2Impact  
+[GitHub](https://github.com/gcangemi1997-coder) | [Portfolio](https://gcangemi1997-coder.github.io/)
+
+---
+
+*Built with TypeScript best practices for clean, scalable code.*
