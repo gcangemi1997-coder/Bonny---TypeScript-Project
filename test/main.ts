@@ -1,4 +1,4 @@
-// Import of classes in ./classes file
+// Import of classes in ../src/classes.js
 
 import { Startup, Incentivo, Cittadino } from "../src/classes.js";
 
