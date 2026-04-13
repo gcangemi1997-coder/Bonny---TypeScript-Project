@@ -1,4 +1,4 @@
-// Import of interfaces from the ./intefaces file
+// Imports of interfaces from the ./intefaces file
 
 import { IStartup, IIncentivo, ICittadino } from "./interfaces.js";
 
