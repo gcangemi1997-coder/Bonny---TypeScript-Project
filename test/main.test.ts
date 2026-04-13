@@ -1,4 +1,4 @@
-// Here i check if scripts work
+// Here I check whether the scripts are working
 
 import { Startup, Incentivo } from "../src/classes.js";
 
