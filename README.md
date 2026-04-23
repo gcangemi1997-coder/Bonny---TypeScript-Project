@@ -123,7 +123,7 @@ if (checkIncentivo) {
 
 **Giorgio Cangemi**  
 Full Stack Developer | Start2Impact  
-[GitHub](https://github.com/gcangemi1997-coder) | [Portfolio] (https://gc-portfolio-eta.vercel.app/)
+[GitHub](https://github.com/gcangemi1997-coder) | [Portfolio](https://gc-portfolio-eta.vercel.app/)
 
 ---
 
